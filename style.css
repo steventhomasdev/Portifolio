@@ -1,0 +1,178 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* css reset */
+
+html, body, div, span, applet, object, iframe,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* angar tags */
+a {
+    color: #D76652;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#3D3D3D; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+/* body */
+
+body{
+    background-color: #F8E4D9;
+    font-family: "Roboto", serif;
+    color: #D76652;
+}
+
+/* parent */
+
+.parent {
+    display: grid;
+    max-width: 1600px;
+    padding: 1em;
+    margin: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto 2fr auto;
+    grid-template-areas: "header" "nav" "main" "footer";
+}
+
+/* header */
+
+.header, .nav, .main, .footer{
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.header{
+    grid-area: header;
+    margin-bottom: 1em;
+}
+
+.header > picture > img {
+    max-width: 35em;
+}
+
+/* nav */
+
+.nav{
+    grid-area: nav;
+    grid-template-columns: auto auto auto auto;
+    font-size: large;
+    font-weight: 700;
+}
+
+/* main */
+
+.main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "promotion" "articles";
+    padding: 1em;
+}
+
+/* promotion */
+
+.promotion{
+    grid-area: promotion;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    height: 10em;
+}
+
+/* button */
+
+.button {
+  background-color: #8B3E2F;
+  color: #F8E4D9;
+  border-radius: .25em;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 1em;
+  justify-content: center;
+  min-height: 3rem;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+    background-color: #3D3D3D;
+    color: white;
+}
+
+.info-container{
+    grid-area: articles;
+    display: flex;
+    margin: 0.5em;
+    gap: 0.5em;
+}
+
+.info{
+    width: 100%;
+    padding: 0.5em;
+    text-align: center;
+    margin: auto;
+    background-color:rebeccapurple;
+}
+
+.footer{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "left" "right";
+}
+
+/* media queries */
+
+@media screen and (max-width: 650px) {
+    .header > picture > img {
+        max-width: 30em;
+        max-height: 6em;
+    }
+}
