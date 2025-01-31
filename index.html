@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/Artboard1.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style.css" />
+
+    <meta property="og:title" content="Hair Day - Boutique Hair Salon">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/logo.png">
+    <meta property="og:url" content="https://hairday.com">
+    <meta property="og:description" content="Hair Day is a boutique hair salon in Madison, Wisconsin, specializing in cut, color, and styling, with a focus on edgy hair colors and on-trend cuts. We also offer makeup and nail services in a warm, relaxing environment.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Hair Day">
+
     <title>Hair Day</title>
   </head>
   <body class="parent">
     <header class="header">
       <picture>
         <source media="(max-width: 650px)" srcset="assets/Artboard1.png" />
-        <img src="./assets/Artboard22.png" alt="logo" />
+        <img src="./assets/Artboard22.png" alt="Hair Day Logo" />
       </picture>
     </header>
     <nav class="nav">
-      <a href="#" class="link">Home</a>
-      <a href="" class="link">Bookings</a>
-      <a href="" class="link">Contact</a>
-      <a href="" class="link">About</a>
+      <a href="#home" class="link">Home</a>
+      <a href="#Bookings" class="link">Bookings</a>
+      <a href="#Contact" class="link">Contact</a>
+      <a href="#About" class="link">About</a>
     </nav>
     <main class="main">
       <section class="promotion">
@@ -26,17 +35,57 @@
           <h2>Limited Time Offer: 30% Off Your Next Hair Makeover!</h2>
           <p>Our team of experts will make your hair shine—now at 30% off!</p>
         </div>
-        <button class="button">Book Now</button>
+        <div class="promo">Promo Code : XYZAQT</div>
       </section>
       <section class="articles">
-        <div class="info">info</div>
-        <div class="info">info</div>
-        <div class="info">info</div>
+        <article class="card">
+          <img src="./assets/pexels-cottonbro-3993310.jpg" alt="Hair Stylist Jasmine Doe" />
+          <div class="container">
+            <h4><b>Jasmine Doe</b></h4>
+            <p>
+              Expert Hair Stylist with 10+ years of experience in modern and
+              classic hairdressing. Specializes in balayage, keratin treatments,
+              and bridal styling.
+            </p>
+            <button class="button">Book Appointment</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="./assets/pexels-david-geib-1265112-3268732.jpg"
+            alt="Hair Stylist Priya Jimmy"
+          />
+          <div class="container">
+            <h4><b>Priya Jimmy</b></h4>
+            <p>
+              Professional hairstylist known for her precision haircuts,
+              creative coloring, and deep conditioning treatments. Dedicated to
+              giving clients a fresh, stylish look.
+            </p>
+            <button class="button">Book Appointment</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./assets/pexels-hikaique-331989.jpg" alt="Hair Stylist Robert Doe" />
+          <div class="container">
+            <h4><b>Robert Doe</b></h4>
+            <p>
+              Men’s grooming expert specializing in fades, beard trims, and
+              classic gentleman’s cuts. Passionate about modern trends and
+              personalized styling.
+            </p>
+            <button class="button">Book Appointment</button>
+          </div>
+        </article>
       </section>
     </main>
     <footer class="footer">
-      <div class="left">left</div>
-      <div class="right">right</div>
+      <div class="left">
+        <img class="footer-icon" src="./assets/Artboard1.png" alt="Hair Day Logo" />
+      </div>
+      <div class="right">© 2025 Hair Day. All rights reserved.</div>
     </footer>
   </body>
 </html>
