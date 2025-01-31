@@ -43,14 +43,14 @@ table {
 	border-spacing: 0;
 }
 
-/* angar tags */
+/* a tags */
 a {
-    color: #D76652;
+    color: white;
     text-decoration: none;
 }
 
 a:hover {
-    color:#3D3D3D; 
+    color: #d0604c; 
     text-decoration:none; 
     cursor:pointer;  
 }
@@ -58,9 +58,9 @@ a:hover {
 /* body */
 
 body{
-    background-color: #F8E4D9;
+    background-color: #0f0f0f;
     font-family: "Roboto", serif;
-    color: #D76652;
+    color: white;
 }
 
 /* parent */
@@ -68,25 +68,29 @@ body{
 .parent {
     display: grid;
     max-width: 1600px;
-    padding: 1em;
+    padding: 0 1em;
     margin: auto;
     grid-template-columns: auto;
-    grid-template-rows: auto auto 2fr auto;
-    grid-template-areas: "header" "nav" "main" "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header" 
+        "nav" 
+        "main" 
+        "footer";
+    min-height: 100vh;
 }
 
 /* header */
 
 .header, .nav, .main, .footer{
-    display: grid;
     place-items: center;
     text-align: center;
     padding: 10px;
 }
 
-.header{
+.header {
     grid-area: header;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 .header > picture > img {
@@ -95,16 +99,22 @@ body{
 
 /* nav */
 
-.nav{
-    grid-area: nav;
-    grid-template-columns: auto auto auto auto;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    font-weight: bold;
     font-size: large;
-    font-weight: 700;
+}
+
+.nav a:hover{
+    transform: scale(1.2); 
+    transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
 /* main */
 
-.main{
+.main {
     grid-area: main;
     display: grid;
     grid-template-columns: auto;
@@ -122,50 +132,107 @@ body{
     align-items: center;
     text-align: left;
     width: 100%;
-    height: 10em;
+    gap: 2em;
+}
+
+.promo{
+    background-color: #d0604c;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 1em;
+    text-align: center;
+    align-items: center;
 }
 
 /* button */
 
 .button {
-  background-color: #8B3E2F;
-  color: #F8E4D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d0604c;
+  color: #f3e3d3;
   border-radius: .25em;
   font-size: 1em;
   font-weight: 600;
   padding: 1em;
-  justify-content: center;
   min-height: 3rem;
   cursor: pointer;
   border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #3D3D3D;
     color: white;
+    transform: scale(0.9); 
 }
 
-.info-container{
+/* articles */
+
+.articles {
     grid-area: articles;
     display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
     margin: 0.5em;
-    gap: 0.5em;
+    gap: 1em;
+    width: 100%;
 }
 
-.info{
-    width: 100%;
+.card {
+    flex: 1;
+    cursor: pointer;
+    min-width: 250px;
     padding: 0.5em;
     text-align: center;
     margin: auto;
-    background-color:rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: auto;
+    align-items: center;
+    color: #e0e0e0;
+    border-radius: 8px;
+}
+
+.card:hover {
+    background-color: white;
+    color: black;
+}
+
+.card > img {
+    width: 100%;
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+/* Image hover effect for the cards */
+.card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+.card .container, .card .button{
+    width: 100%;
 }
 
 .footer{
     grid-area: footer;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    grid-template-areas: "left" "right";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer-icon{
+    width: 8em;
 }
 
 /* media queries */
@@ -174,5 +241,19 @@ body{
     .header > picture > img {
         max-width: 30em;
         max-height: 6em;
+    }
+
+    .articles {
+        display: block;
+    }
+
+    .promotion{
+        display: block;
+    }
+    .main{
+        padding: 0;
+    }
+    .footer .right{
+        font-size: x-small;
     }
 }
